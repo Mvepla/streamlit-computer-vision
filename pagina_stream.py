@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
-import tensorflow as tf
-from tensorflow.keras.preprocessing.image import img_to_array, load_img
+import tensorflow
+from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 
 
@@ -19,7 +19,7 @@ image_url = './logo-oceanografic-min.png'
 st.image(image_url)
 
 def reconocer_foto(imagen):
-    model = tf.keras.models.load_model('my_keras_model_line2.h5')
+    model = tensorflow.keras.models.load_model('my_keras_model_line2.h5')
 
     IMAGE_SIZE = (250, 250)
     img = Image.open(imagen).convert('L').resize(IMAGE_SIZE)
